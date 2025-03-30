@@ -6,6 +6,7 @@ import Features from '@/components/Features';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import { CheckCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   return (

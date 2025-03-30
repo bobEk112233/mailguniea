@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import EmailVerifier from './EmailVerifier';
 import Logo from './Logo';
+import { CheckCircle } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (

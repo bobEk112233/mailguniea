@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { verifyEmail, VerificationResult } from '@/utils/emailVerifier';
-import { CheckCircle, XCircle, AlertCircle, LoaderCircle } from 'lucide-react';
+import { CheckCircle, XCircle, AlertCircle, Loader } from 'lucide-react';
 
 const EmailVerifier: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -72,7 +72,7 @@ const EmailVerifier: React.FC = () => {
             >
               {isVerifying ? (
                 <>
-                  <LoaderCircle className="mr-2 h-4 w-4 animate-spin-pulse" />
+                  <Loader className="mr-2 h-4 w-4 animate-spin" />
                   Verifying...
                 </>
               ) : (
