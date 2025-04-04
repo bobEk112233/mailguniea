@@ -64,16 +64,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				mailguinea: {
-					50: '#fff7ed',
-					100: '#ffedd5',
-					200: '#fed7aa',
-					300: '#fdba74',
-					400: '#fb923c',
-					500: '#f97316',
-					600: '#ea580c',
-					700: '#c2410c',
-					800: '#9a3412',
-					900: '#7c2d12',
+					50: '#fef8ed',
+					100: '#fdefd3',
+					200: '#fae0a7',
+					300: '#f7c96f',
+					400: '#f5b041', // Matched to the guinea pig color
+					500: '#f39c12', // A bit darker
+					600: '#ea8c00', // Darker shade
+					700: '#c27000', // Even darker
+					800: '#9b5800',
+					900: '#7a4500',
 				}
 			},
 			borderRadius: {
