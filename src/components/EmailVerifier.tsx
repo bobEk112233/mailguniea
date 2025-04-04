@@ -36,8 +36,8 @@ const EmailVerifier: React.FC = () => {
 
   const getScoreColor = (score?: number) => {
     if (!score) return 'bg-gray-200';
-    if (score >= 80) return 'bg-green-500';
-    if (score >= 60) return 'bg-green-400';
+    if (score >= 80) return 'bg-mailguinea-500';
+    if (score >= 60) return 'bg-mailguinea-400';
     if (score >= 40) return 'bg-yellow-400';
     return 'bg-red-500';
   };
@@ -67,7 +67,7 @@ const EmailVerifier: React.FC = () => {
             </div>
             <Button 
               type="submit" 
-              className="w-full bg-mailpunch-600 hover:bg-mailpunch-700"
+              className="w-full bg-mailguinea-600 hover:bg-mailguinea-700"
               disabled={isVerifying}
             >
               {isVerifying ? (

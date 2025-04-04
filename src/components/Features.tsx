@@ -40,11 +40,11 @@ const Features: React.FC = () => {
     <section id="features" className="py-16 bg-secondary">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-mailpunch-700 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-mailguinea-700 mb-4">
             Powerful Email Verification Features
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            MailPunch provides industry-leading email verification services to keep your lists clean and your deliverability high
+            MailGuinea provides industry-leading email verification services to keep your lists clean and your deliverability high
           </p>
         </div>
 
@@ -54,10 +54,10 @@ const Features: React.FC = () => {
               key={index}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-border"
             >
-              <div className="w-12 h-12 bg-mailpunch-100 rounded-full flex items-center justify-center mb-4">
-                <feature.icon className="h-6 w-6 text-mailpunch-600" />
+              <div className="w-12 h-12 bg-mailguinea-100 rounded-full flex items-center justify-center mb-4">
+                <feature.icon className="h-6 w-6 text-mailguinea-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-mailpunch-800">{feature.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-mailguinea-800">{feature.title}</h3>
               <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
