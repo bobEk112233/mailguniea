@@ -22,10 +22,15 @@ const App = () => {
     if (document.readyState === "complete") {
       setLoading(false);
     } else {
-      window.addEventListener("load", () => setLoading(false));
+      const handleLoad = () => setLoading(false);
+      window.addEventListener("load", handleLoad);
       
       // Failsafe in case the load event doesn't fire
       setTimeout(() => setLoading(false), 2000);
+
+      return () => {
+        window.removeEventListener("load", handleLoad);
+      };
     }
 
     // Check for common issues
@@ -36,10 +41,6 @@ const App = () => {
     } catch (e) {
       setError("Browser storage error: " + (e instanceof Error ? e.message : String(e)));
     }
-
-    return () => {
-      window.removeEventListener("load", () => setLoading(false));
-    };
   }, []);
 
   if (loading) {
@@ -66,7 +67,7 @@ const App = () => {
             Try clearing your cache or opening in an incognito window.
           </p>
           <button 
-            onClick={() => window.location.reload(true)} 
+            onClick={() => window.location.reload()} 
             className="px-4 py-2 bg-mailguinea-600 text-white rounded hover:bg-mailguinea-700 transition-colors"
           >
             Reload Page
