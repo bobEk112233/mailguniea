@@ -1,24 +1,111 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mailpuncher-skycheck</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>MailGuinea - Email Verification</title>
+    <meta name="description" content="Verify email addresses in real-time with MailGuinea's reliable validation service" />
+    <meta name="author" content="MailGuinea" />
 
-    <meta property="og:title" content="Lovable Generated Project" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="MailGuinea - Email Verification Service" />
+    <meta property="og:description" content="Verify email addresses in real-time with MailGuinea's reliable validation service" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:site" content="@mailguinea" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Add inline diagnostic styles -->
+    <style>
+      #initial-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+      }
+      #initial-loader.hidden {
+        display: none;
+      }
+      #error-message {
+        display: none;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff8f8;
+        border: 1px solid #ffdddd;
+        border-radius: 4px;
+        color: #333;
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body>
+    <!-- Initial loader shown before React loads -->
+    <div id="initial-loader">
+      <div style="text-align: center;">
+        <div>Loading MailGuinea...</div>
+        <div style="margin-top: 10px; height: 4px; width: 100px; background-color: #f0f0f0; border-radius: 2px; overflow: hidden;">
+          <div id="loader-bar" style="height: 100%; width: 0%; background-color: #FFA94D; transition: width 0.3s;"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Error message container for critical errors -->
+    <div id="error-message"></div>
+    
     <div id="root"></div>
+    
+    <!-- Inline script for diagnosing early loading issues -->
+    <script>
+      // Simple progress bar animation
+      var width = 0;
+      var interval = setInterval(function() {
+        width += 5;
+        if (width > 90) clearInterval(interval);
+        document.getElementById('loader-bar').style.width = width + '%';
+      }, 100);
+      
+      // Error handling for initial load
+      window.addEventListener('error', function(e) {
+        var errorMsg = document.getElementById('error-message');
+        errorMsg.style.display = 'block';
+        errorMsg.innerHTML = '<h3>Something went wrong</h3>' +
+          '<p>Error: ' + e.message + '</p>' +
+          '<p>This might be caused by:</p>' +
+          '<ul style="text-align: left; display: inline-block;">' +
+          '<li>Browser caching after DNS changes</li>' +
+          '<li>Missing resources</li>' +
+          '<li>JavaScript errors</li>' +
+          '</ul>' +
+          '<p><button onclick="window.location.reload(true)" style="padding: 8px 16px; background: #FFA94D; border: none; border-radius: 4px; color: white; cursor: pointer;">Reload Page</button></p>';
+          
+        document.getElementById('initial-loader').classList.add('hidden');
+      });
+      
+      // Hide the loader when the app loads
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loader = document.getElementById('initial-loader');
+          if (loader) loader.classList.add('hidden');
+        }, 500);
+      });
+      
+      // Failsafe - hide loader after 5 seconds regardless
+      setTimeout(function() {
+        var loader = document.getElementById('initial-loader');
+        if (loader) loader.classList.add('hidden');
+      }, 5000);
+    </script>
+    
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
