@@ -1,0 +1,1 @@
+document.getElementById('root').innerHTML += '<p style="text-align:center;">[Simulated app loaded]</p>';
