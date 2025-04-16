@@ -1,1 +1,0 @@
-document.getElementById("root").innerHTML = "<h1 style='text-align:center;padding-top:50px;'>✅ MailGuinea is working!</h1>";
